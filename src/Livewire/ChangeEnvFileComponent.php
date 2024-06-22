@@ -21,19 +21,19 @@ class ChangeEnvFileComponent extends Component implements HasActions, HasForms
         return Action::make('env-action')
             ->icon('heroicon-o-command-line')
             ->iconButton()
-            ->modalHeading(__('Change env file'))
+            ->modalHeading(__('Change env file')) //@todo: need to create translation for this
             ->modalWidth('lg')
             ->form([
                 //@todo: change this to a code editor
                 Textarea::make('envFile')
                     ->required()
-                    ->default(file_get_contents(base_path('.env')))
+                    //->default(file_get_contents(base_path('.env')))
                     ->autofocus(),
             ])
             ->action(function (array $data) {
-                file_put_contents(base_path('.env'), $this->envFile);
+                //file_put_contents(base_path('.env'), $this->envFile);
 
-                $this->notify(Notification::make(__('Env file saved successfully!')));
+                $this->notify(Notification::make(__('Env file saved successfully!'))); //@todo: need to create translation for this
             });
     }
 
