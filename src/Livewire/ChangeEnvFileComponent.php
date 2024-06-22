@@ -16,8 +16,6 @@ class ChangeEnvFileComponent extends Component implements HasActions, HasForms
     use InteractsWithActions;
     use InteractsWithForms;
 
-    public $envFile;
-
     public function editAction()
     {
         return Action::make('env-action')
@@ -26,21 +24,17 @@ class ChangeEnvFileComponent extends Component implements HasActions, HasForms
             ->modalHeading(__('Change env file'))
             ->modalWidth('lg')
             ->form([
+                //@todo: change this to a code editor
                 Textarea::make('envFile')
                     ->required()
                     ->default(file_get_contents(base_path('.env')))
                     ->autofocus(),
             ])
             ->action(function (array $data) {
-                dd($data);
+                file_put_contents(base_path('.env'), $this->envFile);
+
+                $this->notify(Notification::make(__('Env file saved successfully!')));
             });
-    }
-
-    public function saveEnvFileAction()
-    {
-        file_put_contents(base_path('.env'), $this->envFile);
-
-        $this->notify(Notification::make(__('Env file saved successfully!')));
     }
 
     public function render()
