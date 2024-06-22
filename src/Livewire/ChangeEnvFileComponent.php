@@ -2,14 +2,14 @@
 
 namespace Joaopaulolndev\FilamentEditEnv\Livewire;
 
-use Filament\Forms\Components\Textarea;
 use Filament\Actions\Action;
 use Filament\Actions\Concerns\InteractsWithActions;
 use Filament\Actions\Contracts\HasActions;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
-use Livewire\Component;
 use Filament\Notifications\Notification;
+use Livewire\Component;
 
 class ChangeEnvFileComponent extends Component implements HasActions, HasForms
 {

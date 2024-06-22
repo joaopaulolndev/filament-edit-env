@@ -6,11 +6,11 @@ use Closure;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 use Filament\Support\Concerns\EvaluatesClosures;
-use Livewire\Livewire;
+use Filament\Support\Facades\FilamentView;
 use Filament\View\PanelsRenderHook;
 use Illuminate\Support\Facades\Blade;
-use Filament\Support\Facades\FilamentView;
 use Joaopaulolndev\FilamentEditEnv\Livewire\ChangeEnvFileComponent;
+use Livewire\Livewire;
 
 class FilamentEditEnvPlugin implements Plugin
 {

@@ -2,6 +2,4 @@
 
 namespace Joaopaulolndev\FilamentEditEnv;
 
-class FilamentEditEnv
-{
-}
+class FilamentEditEnv {}

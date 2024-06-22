@@ -9,12 +9,12 @@ use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
+use Joaopaulolndev\FilamentEditEnv\Commands\FilamentEditEnvCommand;
+use Joaopaulolndev\FilamentEditEnv\Testing\TestsFilamentEditEnv;
 use Livewire\Features\SupportTesting\Testable;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Joaopaulolndev\FilamentEditEnv\Commands\FilamentEditEnvCommand;
-use Joaopaulolndev\FilamentEditEnv\Testing\TestsFilamentEditEnv;
 
 class FilamentEditEnvServiceProvider extends PackageServiceProvider
 {
@@ -58,9 +58,7 @@ class FilamentEditEnvServiceProvider extends PackageServiceProvider
         }
     }
 
-    public function packageRegistered(): void
-    {
-    }
+    public function packageRegistered(): void {}
 
     public function packageBooted(): void
     {
