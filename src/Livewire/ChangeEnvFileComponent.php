@@ -22,6 +22,7 @@ class ChangeEnvFileComponent extends Component implements HasActions, HasForms
     {
         $this->icon = \Joaopaulolndev\FilamentEditEnv\FilamentEditEnvPlugin::get()->getIcon();
     }
+
     public function editAction()
     {
         return Action::make('edit')
