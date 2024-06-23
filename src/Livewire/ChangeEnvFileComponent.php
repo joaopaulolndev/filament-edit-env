@@ -16,10 +16,16 @@ class ChangeEnvFileComponent extends Component implements HasActions, HasForms
     use InteractsWithActions;
     use InteractsWithForms;
 
+    public string $icon = '';
+
+    public function mount()
+    {
+        $this->icon = \Joaopaulolndev\FilamentEditEnv\FilamentEditEnvPlugin::get()->getIcon();
+    }
     public function editAction()
     {
         return Action::make('edit')
-            ->icon('heroicon-o-command-line')
+            ->icon($this->icon)
             ->iconButton()
             ->modalHeading(__('filament-edit-env::default.heading'))
             ->form([

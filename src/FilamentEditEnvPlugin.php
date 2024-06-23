@@ -18,6 +18,8 @@ class FilamentEditEnvPlugin implements Plugin
 
     public bool | Closure | null $showButton = null;
 
+    public string | Closure | null $setIcon = null;
+
     public function getId(): string
     {
         return 'filament-edit-env';
@@ -69,5 +71,17 @@ class FilamentEditEnvPlugin implements Plugin
         $this->showButton = $showButton;
 
         return $this;
+    }
+
+    public function setIcon(string | Closure $setIcon = 'heroicon-o-command-line'): static
+    {
+        $this->setIcon = $setIcon;
+
+        return $this;
+    }
+
+    public function getIcon(): string
+    {
+        return $this->evaluate($this->setIcon) ?? 'heroicon-o-command-line';
     }
 }
