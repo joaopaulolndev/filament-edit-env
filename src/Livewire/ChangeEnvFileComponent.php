@@ -18,22 +18,24 @@ class ChangeEnvFileComponent extends Component implements HasActions, HasForms
 
     public function editAction()
     {
-        return Action::make('env-action')
+        return Action::make('edit')
             ->icon('heroicon-o-command-line')
             ->iconButton()
-            ->modalHeading(__('Change env file')) //@todo: need to create translation for this
-            ->modalWidth('lg')
+            ->modalHeading(__('filament-edit-env::default.heading'))
             ->form([
                 //@todo: change this to a code editor
                 Textarea::make('envFile')
+                    ->label('.env')
                     ->required()
-                    //->default(file_get_contents(base_path('.env')))
-                    ->autofocus(),
+                    ->default(file_get_contents(base_path('.env')))
+                    ->autofocus()
+                    ->rows(20)
+                    ->hint(__('filament-edit-env::default.hint')),
             ])
             ->action(function (array $data) {
-                //file_put_contents(base_path('.env'), $this->envFile);
+                file_put_contents(base_path('.env'), $data['envFile']);
 
-                $this->notify(Notification::make(__('Env file saved successfully!'))); //@todo: need to create translation for this
+                Notification::make(__('filament-edit-env::default.save'));
             });
     }
 
