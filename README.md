@@ -37,6 +37,9 @@ use Joaopaulolndev\FilamentEditEnv\FilamentEditEnvPlugin;
 ])
 ```
 
+> [!NOTE]
+> for the code editor field, I am using the plugin  [Filament Ace Editor](https://github.com/riodwanto/filament-ace-editor)
+
 ## Testing
 
 ```bash
