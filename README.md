@@ -7,7 +7,7 @@
 
 
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+This is a plugin for FilamentPHP that, through an action, can edit the environment file.
 
 ## Installation
 
@@ -17,37 +17,24 @@ You can install the package via composer:
 composer require joaopaulolndev/filament-edit-env
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="filament-edit-env-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="filament-edit-env-config"
-```
-
 Optionally, you can publish the views using
 
 ```bash
 php artisan vendor:publish --tag="filament-edit-env-views"
 ```
 
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
 ## Usage
 
+Add in AdminPanelProvider.php
+
 ```php
-$filamentEditEnv = new Joaopaulolndev\FilamentEditEnv();
-echo $filamentEditEnv->echoPhrase('Hello, Joaopaulolndev!');
+use Joaopaulolndev\FilamentEditEnv\FilamentEditEnvPlugin;
+
+->plugins([
+    FilamentEditEnvPlugin::make()
+        ->showButton(fn () => auth()->user()->id === 1)
+        ->setIcon('heroicon-o-cog'),
+])
 ```
 
 ## Testing
