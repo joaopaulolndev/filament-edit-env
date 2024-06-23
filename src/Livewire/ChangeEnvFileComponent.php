@@ -10,6 +10,7 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Notifications\Notification;
 use Livewire\Component;
+use Riodwanto\FilamentAceEditor\AceEditor;
 
 class ChangeEnvFileComponent extends Component implements HasActions, HasForms
 {
@@ -30,14 +31,15 @@ class ChangeEnvFileComponent extends Component implements HasActions, HasForms
             ->iconButton()
             ->modalHeading(__('filament-edit-env::default.heading'))
             ->form([
-                //@todo: change this to a code editor
-                Textarea::make('envFile')
+                AceEditor::make('envFile')
                     ->label('.env')
+                    ->mode('php')
+                    ->theme('github')
+                    ->darkTheme('dracula')
                     ->required()
                     ->default(file_get_contents(base_path('.env')))
-                    ->autofocus()
-                    ->rows(20)
-                    ->hint(__('filament-edit-env::default.hint')),
+                    ->hint(__('filament-edit-env::default.hint'))
+                    ->height('26rem'),
             ])
             ->action(function (array $data) {
                 file_put_contents(base_path('.env'), $data['envFile']);
