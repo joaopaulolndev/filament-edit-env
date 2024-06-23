@@ -8,6 +8,11 @@
 
 
 This is a plugin for FilamentPHP that, through an action, can edit the environment file.
+<div class="filament-hidden">
+    
+![Screenshot of Application Feature](https://raw.githubusercontent.com/joaopaulolndev/filament-edit-env/main/art/joaopaulolndev-filament-edit-env.jpg)
+
+</div>
 
 ## Installation
 
