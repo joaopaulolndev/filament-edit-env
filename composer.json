@@ -61,10 +61,7 @@
         "laravel": {
             "providers": [
                 "Joaopaulolndev\\FilamentEditEnv\\FilamentEditEnvServiceProvider"
-            ],
-            "aliases": {
-                "FilamentEditEnv": "Joaopaulolndev\\FilamentEditEnv\\Facades\\FilamentEditEnv"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
