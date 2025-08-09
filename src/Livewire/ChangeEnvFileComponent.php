@@ -8,6 +8,7 @@ use Filament\Actions\Contracts\HasActions;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Notifications\Notification;
+use Joaopaulolndev\FilamentEditEnv\FilamentEditEnvPlugin;
 use Livewire\Component;
 use Riodwanto\FilamentAceEditor\AceEditor;
 
@@ -20,7 +21,7 @@ class ChangeEnvFileComponent extends Component implements HasActions, HasForms
 
     public function mount()
     {
-        $this->icon = \Joaopaulolndev\FilamentEditEnv\FilamentEditEnvPlugin::get()->getIcon();
+        $this->icon = FilamentEditEnvPlugin::get()->getIcon();
     }
 
     public function editAction()
@@ -29,7 +30,7 @@ class ChangeEnvFileComponent extends Component implements HasActions, HasForms
             ->icon($this->icon)
             ->iconButton()
             ->modalHeading(__('filament-edit-env::default.heading'))
-            ->form([
+            ->schema([
                 AceEditor::make('envFile')
                     ->label('.env')
                     ->mode('php')
