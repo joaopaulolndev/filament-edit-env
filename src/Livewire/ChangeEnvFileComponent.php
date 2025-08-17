@@ -8,8 +8,10 @@ use Filament\Actions\Contracts\HasActions;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Notifications\Notification;
+use Illuminate\Contracts\View\View;
+use JeffersonGoncalves\Filament\AceEditorField\Forms\Components\AceEditorInput;
+use Joaopaulolndev\FilamentEditEnv\FilamentEditEnvPlugin;
 use Livewire\Component;
-use Riodwanto\FilamentAceEditor\AceEditor;
 
 class ChangeEnvFileComponent extends Component implements HasActions, HasForms
 {
@@ -18,19 +20,19 @@ class ChangeEnvFileComponent extends Component implements HasActions, HasForms
 
     public string $icon = '';
 
-    public function mount()
+    public function mount(): void
     {
-        $this->icon = \Joaopaulolndev\FilamentEditEnv\FilamentEditEnvPlugin::get()->getIcon();
+        $this->icon = FilamentEditEnvPlugin::get()->getIcon();
     }
 
-    public function editAction()
+    public function editAction(): Action
     {
         return Action::make('edit')
             ->icon($this->icon)
             ->iconButton()
             ->modalHeading(__('filament-edit-env::default.heading'))
-            ->form([
-                AceEditor::make('envFile')
+            ->schema([
+                AceEditorInput::make('envFile')
                     ->label('.env')
                     ->mode('php')
                     ->theme('github')
@@ -47,7 +49,7 @@ class ChangeEnvFileComponent extends Component implements HasActions, HasForms
             });
     }
 
-    public function render()
+    public function render(): View
     {
         return view('filament-edit-env::livewire.change-env-file-component');
     }
