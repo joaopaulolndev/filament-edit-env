@@ -10,7 +10,7 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Notifications\Notification;
 use Joaopaulolndev\FilamentEditEnv\FilamentEditEnvPlugin;
 use Livewire\Component;
-use Riodwanto\FilamentAceEditor\AceEditor;
+use JeffersonGoncalves\Filament\AceEditorField\Forms\Components\AceEditorInput;
 
 class ChangeEnvFileComponent extends Component implements HasActions, HasForms
 {
