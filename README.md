@@ -13,7 +13,7 @@ This is a plugin for FilamentPHP that, through an action, can edit the environme
 
 <div class="filament-hidden">
     
-![Screenshot of Application Feature](https://raw.githubusercontent.com/joaopaulolndev/filament-edit-env/2.x/art/joaopaulolndev-edit-env.jpg)
+![Screenshot of Application Feature](https://raw.githubusercontent.com/joaopaulolndev/filament-edit-env/3.x/art/joaopaulolndev-edit-env.jpg)
 
 </div>
 
@@ -23,13 +23,14 @@ This is a plugin for FilamentPHP that, through an action, can edit the environme
 |-----------------|------------------|
 | 1.x             | 3.x              |
 | 2.x             | 4.x              |
+| 3.x             | 5.x              |
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require joaopaulolndev/filament-edit-env:^2.0
+composer require joaopaulolndev/filament-edit-env:^3.0
 ```
 
 ## Usage
@@ -47,7 +48,7 @@ use Joaopaulolndev\FilamentEditEnv\FilamentEditEnvPlugin;
 ```
 
 > [!NOTE]
-> for the code editor field, I am using the plugin  [Filament Ace Editor](https://github.com/riodwanto/filament-ace-editor)
+> for the code editor field, I am using the plugin  [Filament Ace Editor](https://github.com/jeffersongoncalves/filament-ace-editor)
 
 ## Testing
 
