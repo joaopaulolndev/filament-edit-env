@@ -23,6 +23,7 @@ This is a plugin for FilamentPHP that, through an action, can edit the environme
 |-----------------|------------------|
 | 1.x             | 3.x              |
 | 2.x             | 4.x              |
+| 3.x             | 5.x              |
 
 ## Installation
 
@@ -47,7 +48,7 @@ use Joaopaulolndev\FilamentEditEnv\FilamentEditEnvPlugin;
 ```
 
 > [!NOTE]
-> for the code editor field, I am using the plugin  [Filament Ace Editor](https://github.com/riodwanto/filament-ace-editor)
+> for the code editor field, I am using the plugin  [Filament Ace Editor](https://github.com/jeffersongoncalves/filament-ace-editor)
 
 ## Testing
 
