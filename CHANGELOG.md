@@ -2,6 +2,10 @@
 
 All notable changes to `filament-edit-env` will be documented in this file.
 
+## v3.0.0 - 2026-01-20
+
+**Full Changelog**: https://github.com/joaopaulolndev/filament-edit-env/compare/v2.0.0...v3.0.0
+
 ## v2.0.0 - 2025-08-17
 
 ### What's Changed
